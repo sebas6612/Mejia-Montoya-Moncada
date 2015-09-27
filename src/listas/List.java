@@ -6,7 +6,7 @@ package listas;
  *
  * @param <E>
  */
-public interface List<E> extends Iterable<E> {
+public interface List<E> {
 
     /**
      * Add target to the back of this List.

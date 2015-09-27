@@ -120,13 +120,14 @@ public class DoublyLinkedList<E> implements List<E> {
     }
 
     public void reserve() {
-        DoublyLinkedNode<E> node = front;
-        DoublyLinkedList<E> aux;
+        DoublyLinkedList<E> aux = null;
 
-        for (int i = 0; i < size(); i++) {
-            node = node.getNext();
+        for (DoublyLinkedNode<E> node = front; node != null; node = node.getNext()) {
+            if (node.getNext() == null) {
+                while (node.getPrevious() != null) {
+                    aux.add(node.getItem());
+                }
+            }
         }
-
     }
-
 }
