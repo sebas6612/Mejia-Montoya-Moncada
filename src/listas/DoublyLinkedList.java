@@ -119,11 +119,6 @@ public class DoublyLinkedList<E> implements List<E> {
         return tally;
     }
 
-    @Override
-    public Iterator<E> iterator() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public void reserve() {
         DoublyLinkedNode<E> node = front;
         DoublyLinkedList<E> aux;

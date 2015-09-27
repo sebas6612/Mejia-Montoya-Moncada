@@ -1,7 +1,6 @@
 package pilas;
 
 import comun.EmptyStructureException;
-import listas.ArrayList;
 import pilas.Stack;
 
 /**

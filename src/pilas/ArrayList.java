@@ -1,6 +1,7 @@
-package listas;
+package pilas;
 
 import java.util.Iterator;
+import listas.List;
 
 /**
  * An array-based List.
@@ -61,7 +62,7 @@ public class ArrayList<E> implements List<E> {
         return size == data.length;
     }
 
-    @Override
+    
     public Iterator<E> iterator() {
         return new ArrayIterator<>(this);
     }

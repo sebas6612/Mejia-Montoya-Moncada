@@ -1,7 +1,8 @@
-package listas;
+package pilas;
 
 // Introduced in Chapter 5
 import java.util.Iterator;
+import pilas.ArrayList;
 
 /**
  * Iterator associated with an ArrayList.
