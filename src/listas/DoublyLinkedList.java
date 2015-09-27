@@ -90,5 +90,15 @@ public class DoublyLinkedList<E> implements List<E> {
     public Iterator<E> iterator() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    public void reserve(){
+        DoublyLinkedNode<E> node = front;
+        DoublyLinkedList<E> aux;
+        
+        for (int i = 0; i < size(); i++) {
+            node = node.getNext();
+        }
+        
+    }
 
 }
