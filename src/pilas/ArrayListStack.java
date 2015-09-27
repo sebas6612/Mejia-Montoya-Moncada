@@ -3,11 +3,11 @@ package pilas;
 import comun.EmptyStructureException;
 import listas.ArrayList;
 import pilas.Stack;
-import pilas.Stack;
 
 /**
  *
  * @author juanc
+ * @param <E>
  */
 public class ArrayListStack<E> implements Stack<E>{
     private ArrayList data;
@@ -19,7 +19,7 @@ public class ArrayListStack<E> implements Stack<E>{
     
     @Override
     public boolean isEmpty() {
-       return data.size()==0;
+       return data.isEmpty();
     }
 
     @Override
