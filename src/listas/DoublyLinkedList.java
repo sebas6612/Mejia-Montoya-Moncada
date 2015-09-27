@@ -38,7 +38,14 @@ public class DoublyLinkedList<E> implements List<E> {
 
     @Override
     public boolean contains(E target) {
-    return false;
+        for (DoublyLinkedNode<E> node = front;
+                node != null;
+                node = node.getNext()) {
+            if (node.getItem().equals(target)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -61,17 +68,43 @@ public class DoublyLinkedList<E> implements List<E> {
 
     @Override
     public E remove(int index) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        DoublyLinkedNode<E> prev = front;
+        DoublyLinkedNode<E> node = front;
+
+        for (int i = 0; i < index; i++) {
+            prev = node;
+            node = node.getNext();
+        }
+
+        prev.setNext(node.getNext());
+
+        return node.getItem();
     }
 
     @Override
     public boolean remove(E target) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        DoublyLinkedNode<E> prev = front;
+        DoublyLinkedNode<E> node = front;
+
+        while (node != null) {
+            if (node.getItem().equals(target)) {
+                prev.setNext(node.getNext());
+                return true;
+            }
+            prev = node;
+            node = node.getNext();
+        }
+
+        return false;
     }
 
     @Override
     public void set(int index, E target) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        DoublyLinkedNode<E> node = front;
+        for (int i = 0; i < index; i++) {
+            node = node.getNext();
+        }
+        node.setItem(target);
     }
 
     @Override
@@ -90,15 +123,15 @@ public class DoublyLinkedList<E> implements List<E> {
     public Iterator<E> iterator() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    public void reserve(){
+
+    public void reserve() {
         DoublyLinkedNode<E> node = front;
         DoublyLinkedList<E> aux;
-        
+
         for (int i = 0; i < size(); i++) {
             node = node.getNext();
         }
-        
+
     }
 
 }

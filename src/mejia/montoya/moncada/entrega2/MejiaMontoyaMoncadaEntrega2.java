@@ -25,11 +25,22 @@ public class MejiaMontoyaMoncadaEntrega2 {
         list.add("doubly");
         list.add("linked");
         list.add("list");
-        for(int i = 0; i < list.size(); i++)
-        {
+        for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
-        
+        System.out.println(list.contains("probando"));
+        list.remove(1);
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+        list.remove("linked");
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+        list.set(1, "set");
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
         // TODO code application logic here
     }
 
